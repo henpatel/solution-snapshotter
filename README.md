@@ -283,6 +283,8 @@ The `^` signs serve as newline characters in Windows's `cmd`. Remove them if you
 
 You'll find your Visual Studio extension project under `C:\generated-template\vsix`.
 
+Note: When you add the --template-wizard-assembly - Make sure the name doesn't contain any "." in it. Otherwise the project doesn't build. Also --file-extensions-to-ignore option does not seem to be working.  Also, when you use the config file, it doesn't work with multiple --folders-to-ignore parameters. Just use the command line parameters instead of the config file as work around.
+
 Note that to build the generated project you will need to have installed the `Visual Studio extension development` kit using the `Visual Studio Installer`.
 
 ![ext-dev](vs-ext-development.PNG)
@@ -290,7 +292,8 @@ Note that to build the generated project you will need to have installed the `Vi
 There are two ways to test your template.
 
 1. Open the VSIX project inside Visual Studio and hit `Ctrl + F5` to open an experimental VS instance you can test in.
-2. Build the project and install the generated `.vsix` file to your VS instance.
+2. Build the project and install the generated `.vsix` file to your VS instance. This .vsix file will be under your bin/debug or release folder depending on how you built it.
+   You can double click on the extension and it will install it to your visual studio. 
 
 ## Contributing
 
